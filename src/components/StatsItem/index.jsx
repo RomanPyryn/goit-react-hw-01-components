@@ -1,9 +1,8 @@
 const StatsItem = ({ label, percentage }) => {
-    return (
-    <div>
+    return (<div>
         <span className="label">{label}</span>
         <span className="percentage">{percentage}</span>
-    </div>
-)};
+    </div>)
+};
 
 export default StatsItem;

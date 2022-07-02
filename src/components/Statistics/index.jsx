@@ -1,7 +1,7 @@
 import StatsItem from "components/StatsItem";
 
 function Statistics( { title, stats } ) {
-    <section className="statistics">
+    return (<section className="statistics">
         <h2 className="title">{title}</h2>
 
         <ul className="stat-list">
@@ -13,7 +13,7 @@ function Statistics( { title, stats } ) {
                     />
                 </li>))}
         </ul>
-    </section>
+    </section>)
 };
 
 export default Statistics;
