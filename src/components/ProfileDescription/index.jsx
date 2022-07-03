@@ -1,33 +1,35 @@
 import PropTypes from 'prop-types';
+import { Profile, Description, Avatar, Name, Tag, Location, Stats, StatsItem, Label, Quantity } from './ProfileDescription.styled';
 
 const ProfileDescription = ({ username, tag, location, avatar = "https://cdn-icons-png.flaticon.com/512/1077/1077012.png", stats }) => (
-    <div className="profile">
-        <div className="description">
-            <img
-            src={avatar}
-            alt="User avatar"
-            className="avatar"
+    <Profile>
+        <Description>
+            <Avatar
+                src={avatar}
+                alt="User avatar"
+                className="avatar"
+                width="150px"
             />
-            <p className="name">{username}</p>
-            <p className="tag">{tag}</p>
-            <p className="location">{location}</p>
-        </div>
+            <Name>{username}</Name>
+            <Tag>@{tag}</Tag>
+            <Location>{location}</Location>
+        </Description>
 
-        <ul className="stats">
-            <li>
-                <span className="label">Followers</span>
-                <span className="quantity">{stats.followers}</span>
-            </li>
-            <li>
-                <span className="label">Views</span>
-                <span className="quantity">{stats.views}</span>
-            </li>
-            <li>
-                <span className="label">Likes</span>
-                <span className="quantity">{stats.likes}</span>
-                </li>
-        </ul>
-    </div>
+        <Stats>
+            <StatsItem>
+                <Label>Followers</Label>
+                <Quantity>{stats.followers}</Quantity>
+            </StatsItem>
+            <StatsItem>
+                <Label>Views</Label>
+                <Quantity>{stats.views}</Quantity>
+            </StatsItem>
+            <StatsItem>
+                <Label>Likes</Label>
+                <Quantity>{stats.likes}</Quantity>
+            </StatsItem>
+        </Stats>
+    </Profile>
 );
 
 ProfileDescription.propTypes = {
